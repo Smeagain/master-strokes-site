@@ -2,72 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Strokes | Professional Plastering Services</title>
+  <title>JDL Plastering | Expert Plastering & Rendering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo"><img src="images/logo.png" alt="Master Strokes Logo"></a>
-      <nav class="main-nav">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="JDL Plastering"></a>
+      <nav class="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="our-portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
         </ul>
       </nav>
-      <div class="contact-link">
-        <a href="tel:07951067628">07951067628</a>
-      </div>
+      <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Master Strokes</h1>
-      <p>High-Quality Plastering & Rendering for Your Home or Business</p>
-      <a href="contact.html" class="btn-primary">Get a Free Quote</a>
+  <!-- Hero -->
+  <section class="hero" style="background-image:url('images/hero.jpg')">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h1>Professional Plastering & Rendering</h1>
+      <p>Delivering top-quality finishes across the North West.</p>
+      <a href="contact.html" class="btn btn-secondary">Get a Quote</a>
     </div>
   </section>
 
-  <section class="services-preview">
-    <div class="container">
-      <h2>Our Expertise</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="images/service-1.jpg" alt="Interior Plastering">
-          <h3>Interior Plastering</h3>
-          <p>Smooth, seamless finishes on walls and ceilings.</p>
-        </div>
-        <div class="service-card">
-          <img src="images/service-2.jpg" alt="External Rendering">
-          <h3>External Rendering</h3>
-          <p>Durable and decorative renders for all exteriors.</p>
-        </div>
-        <div class="service-card">
-          <img src="images/service-3.jpg" alt="Decking">
-          <h3>Decking</h3>
-          <p>High-quality decking installations and finishes.</p>
-        </div>
+  <!-- Services -->
+  <section class="services container">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="images/service-1.jpg" alt="Plastering">
+        <h3>Plastering</h3>
+        <p>Interior and exterior plastering to the highest standards.</p>
+      </div>
+      <div class="card">
+        <img src="images/service-2.jpg" alt="Rendering">
+        <h3>Rendering</h3>
+        <p>Sand and cement or silicone render expertise for durable finishes.</p>
+      </div>
+      <div class="card">
+        <img src="images/service-3.jpg" alt="Drylining">
+        <h3>Dry Lining</h3>
+        <p>Efficient and clean dry lining solutions for any project size.</p>
       </div>
     </div>
   </section>
 
+  <!-- About -->
+  <section class="about container">
+    <div class="about-text">
+      <h2>About JDL Plastering</h2>
+      <p>JDL Plastering has been providing reliable and professional plastering services since 2023...</p>
+    </div>
+    <div class="about-image">
+      <img src="images/PXL_20240802_162554175.jpg" alt="Team at work">
+    </div>
+  </section>
+
+  <!-- Portfolio Link -->
+  <section class="cta container">
+    <h2>View Our Portfolio</h2>
+    <a href="our-portfolio.html" class="btn btn-primary">See Our Work</a>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-content">
-      <p>&copy; 2025 Master Strokes. All rights reserved.</p>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="footer-widgets">
+        <div class="widget">
+          <h4>Contact Us</h4>
+          <p>Tel: 07341 559194</p>
+          <p>Email: info@jdlplastering.co.uk</p>
+        </div>
+        <div class="widget">
+          <h4>Follow Us</h4>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <p>&copy; 2025 JDL Plastering. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
