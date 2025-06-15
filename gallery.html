@@ -1,0 +1,71 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - Master-Strokes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.svg" alt="Master-Strokes Logo" class="logo" style="height:64px; vertical-align:middle;"/>
+        <span class="site-title">Master-Strokes Plastering & Rendering Services</span>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Project Gallery</h2>
+        <div class="gallery-categories">
+            <a href="#Decking">Decking</a>
+            <a href="#ExteriorRenovation">Exterior Renovation</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Rendering">Rendering</a>
+        </div>
+
+        <div class="gallery-folder" id="Decking">
+            <h3>Decking</h3>
+            <div class="gallery-grid">
+                <img src="images/Decking/IMG-20220426-WA0003.jpg" alt="Decking project" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Decking/IMG-20220426-WA0004.jpg" alt="Decking project" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Decking/IMG-20220617-WA0066.jpg" alt="Decking project" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Decking/IMG-20220617-WA0072.jpg" alt="Decking project" class="gallery-thumb" onclick="openLightbox(this)">
+            </div>
+        </div>
+        <div class="gallery-folder" id="ExteriorRenovation">
+            <h3>Exterior Renovation</h3>
+            <div class="gallery-grid">
+                <img src="images/Exterior renovation/IMG-20250506-WA0002.jpg" alt="Exterior renovation" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Exterior renovation/IMG-20250506-WA0003.jpg" alt="Exterior renovation" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Exterior renovation/IMG-20250506-WA0006.jpg" alt="Exterior renovation" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Exterior renovation/IMG-20250506-WA0010.jpg" alt="Exterior renovation" class="gallery-thumb" onclick="openLightbox(this)">
+            </div>
+        </div>
+        <div class="gallery-folder" id="Projects">
+            <h3>Projects</h3>
+            <div class="gallery-grid">
+                <img src="images/Projects/IMG-20250506-WA0017.jpg" alt="Project" class="gallery-thumb" onclick="openLightbox(this)">
+                <img src="images/Projects/IMG-20250506-WA0018.jpg" alt="Project" class="gallery-thumb" onclick="openLightbox(this)">
+            </div>
+        </div>
+        <div class="gallery-folder" id="Rendering">
+            <h3>Rendering</h3>
+            <div class="gallery-grid">
+                <img src="images/Rendering/IMG-20250506-WA0033.jpg" alt="Rendering" class="gallery-thumb" onclick="openLightbox(this)">
+            </div>
+        </div>
+
+        <!-- Lightbox Modal is created by scripts/lightbox.js -->
+    </main>
+    <footer>
+        <p>Contact us: <a href="tel:07902363781">07902363781</a> | <a href="mailto:info@master-strokes.co.uk">info@master-strokes.co.uk</a></p>
+        <p><a href="privacy.html">Privacy & Cookies</a></p>
+    </footer>
+    <script src="scripts/lightbox.js"></script>
+</body>
+</html>
