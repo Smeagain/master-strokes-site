@@ -1,38 +1,35 @@
-// scripts/slider.js
-
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.querySelector(".slider");
-    const slides = slider.querySelectorAll("img");
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".slider img");
     const nav = document.querySelector(".slider-nav");
-    let current = 0;
+    let currentSlide = 0;
 
-    // Create navigation dots
-    slides.forEach((img, idx) => {
-        const btn = document.createElement("button");
-        btn.onclick = () => showSlide(idx);
-        if (idx === 0) btn.classList.add("active");
-        nav.appendChild(btn);
-    });
+    if (slides.length > 0) {
+        // Create nav buttons
+        for (let i = 0; i < slides.length; i++) {
+            const btn = document.createElement("button");
+            btn.addEventListener("click", () => {
+                goToSlide(i);
+            });
+            nav.appendChild(btn);
+        }
 
-    function showSlide(idx) {
-        slides[current].classList.remove("active");
-        nav.children[current].classList.remove("active");
-        current = idx;
-        slides[current].classList.add("active");
-        nav.children[current].classList.add("active");
+        const navButtons = document.querySelectorAll(".slider-nav button");
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove("active");
+            navButtons[currentSlide].classList.remove("active");
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+            navButtons[currentSlide].classList.add("active");
+        }
+
+        // Initial setup
+        slides[0].classList.add("active");
+        navButtons[0].classList.add("active");
+
+        // Auto-play
+        setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
     }
-
-    // Initial state
-    slides[0].classList.add("active");
-    let timer = setInterval(() => {
-        showSlide((current + 1) % slides.length);
-    }, 4000);
-
-    // Pause on hover
-    slider.onmouseenter = () => clearInterval(timer);
-    slider.onmouseleave = () => {
-        timer = setInterval(() => {
-            showSlide((current + 1) % slides.length);
-        }, 4000);
-    };
 });

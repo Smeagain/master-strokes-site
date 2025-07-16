@@ -1,56 +1,53 @@
-// scripts/lightbox.js
-
-// Create lightbox modal elements if not already in HTML
-(function() {
-    if (!document.getElementById('lightbox-modal')) {
-        let modal = document.createElement('div');
-        modal.id = 'lightbox-modal';
-        modal.className = 'lightbox-modal';
-        modal.style.display = 'none';
-        modal.innerHTML = `
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img class="lightbox-content" id="lightbox-img" src="#" alt="Gallery Large" />
-            <span class="lightbox-prev" onclick="prevLightbox()">&lsaquo;</span>
-            <span class="lightbox-next" onclick="nextLightbox()">&rsaquo;</span>
-        `;
-        document.body.appendChild(modal);
-    }
-})();
-
+let currentImageIndex;
 let galleryImages = [];
-let currentIndex = 0;
 
-function openLightbox(el) {
-    galleryImages = Array.from(document.querySelectorAll('.gallery-thumb'));
-    currentIndex = galleryImages.indexOf(el);
-    let modal = document.getElementById("lightbox-modal");
-    let img = document.getElementById("lightbox-img");
-    img.src = el.src;
-    modal.style.display = "flex";
+function openLightbox(element) {
+    const gallery = element.closest('.gallery-grid');
+    galleryImages = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+    currentImageIndex = galleryImages.indexOf(element);
+    
+    const lightbox = document.createElement('div');
+    lightbox.classList.add('lightbox-modal');
+    lightbox.innerHTML = `
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+        <img src="${element.src}" class="lightbox-content">
+        <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
+    `;
+    document.body.appendChild(lightbox);
+    document.addEventListener('keydown', handleKeydown);
 }
 
 function closeLightbox() {
-    let modal = document.getElementById("lightbox-modal");
-    modal.style.display = "none";
-}
-
-function prevLightbox() {
-    if (galleryImages.length === 0) return;
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    document.getElementById("lightbox-img").src = galleryImages[currentIndex].src;
-}
-function nextLightbox() {
-    if (galleryImages.length === 0) return;
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    document.getElementById("lightbox-img").src = galleryImages[currentIndex].src;
-}
-
-// Keyboard navigation
-document.addEventListener("keydown", function(e) {
-    let modal = document.getElementById("lightbox-modal");
-    if (modal.style.display === "flex") {
-        if (e.key === "ArrowLeft") prevLightbox();
-        if (e.key === "ArrowRight") nextLightbox();
-        if (e.key === "Escape") closeLightbox();
+    const lightbox = document.querySelector('.lightbox-modal');
+    if (lightbox) {
+        lightbox.remove();
+        document.removeEventListener('keydown', handleKeydown);
     }
-});
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+    }
+    if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+    }
+    const lightboxImage = document.querySelector('.lightbox-content');
+    if (lightboxImage) {
+        lightboxImage.src = galleryImages[currentImageIndex].src;
+    }
+}
+
+function handleKeydown(event) {
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+    if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+    }
+    if (event.key === 'ArrowRight') {
+        changeImage(1);
+    }
+}

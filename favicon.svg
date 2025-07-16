@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="120"><svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="120" fill="#fff"></rect>
+  <text x="38" y="70" font-family="Arial Black, Arial, sans-serif" font-size="60" fill="#283142" font-weight="bold">M</text>
+  <text x="98" y="70" font-family="Arial Black, Arial, sans-serif" font-size="60" fill="#febc34" font-weight="bold">S</text>
+  <path d="M36 100 Q80 110 160 90 Q240 70 284 108" stroke="#283142" stroke-width="7" fill="none"></path>
+  <text x="38" y="105" font-family="Arial Black, Arial, sans-serif" font-size="26" fill="#283142" font-weight="bold" letter-spacing="2">
+    MASTER-STROKES
+  </text>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
